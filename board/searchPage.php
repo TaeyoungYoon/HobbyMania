@@ -11,7 +11,10 @@
 	$cate = $list_html = '' ;
 
 	if( isset($_GET['cate']) )	$cate = $_GET['cate'];	
-
+	if( isset($_GET['searchCate']) )	$searchCate = $_GET['searchCate'];	
+	if( isset($_GET['query']) )	$query = $_GET['query'];
+    // 검색어 관리
+    $query = trim($query);
 	// 게시판 구분
 	if( isset($cate) && $cate == 'b_001' )
 	{
@@ -30,8 +33,8 @@
 		$b_name = '전체' ;
 	}
 
-	$c = new db_board();
-	$board_data = $c->selectPost(10, $cate);
+	$c = new db_search();
+	$board_data = $c->selectSearch(10, $cate, $searchCate, $query );
 	
 	// DB에서 select 값 표시
 	if(isset($board_data) && $board_data != '' )
@@ -81,7 +84,7 @@
 		<div class="container" id="board">
 			<div id="board_area"> 
 				<h1><b>{$b_name} MANIA</b></h1><br>
-				<h4>{$b_name}	관련 게시판입니다.</h4><br>
+				<h4>'{$query}' 에 대한 검색 결과.</h4><br>
 				<table class="table table-hover" style="border: 1px solid #ddddda">
 				<thead>
 					<tr>
@@ -100,23 +103,22 @@
 				</tbody>
 				</table>
 				<hr/>
-				<a class = "btn btn-default pull-right" a href="writePage.php?cate={$cate}&m=write">글쓰기</a>
 				<div class="text-center">
 					<ul class="pagination">
 END;
-				$test = $c -> pageNation( 10, 3, $cate);
+				$test = $c -> pageNation( 10, 3, $cate, $searchCate, $query);
 	echo<<<END
 					</ul>
 				</div>
 				<div class="searchbox" id="searchbox" style="text-align: center; margin: 20px 0px 20px 0px;">
 					<form action="/board/searchPage.php" method="get">
-						<input type="hidden" name="cate" value="$cate"/>
+                        <input type="hidden" name="cate" value="$cate"/>    
 						<select name="searchCate">
 							<option value="title">제목</option>
 							<option value="name">글쓴이</option>
 							<option value="content">내용</option>
 						</select>
-						<input type="text" name="query" size="40" required="required" /> <button class="btn btn-default">검색</button>
+						<input type="text" id="query" name="query" size="40" required="required" /> <button>검색</button>
 					</form>
 				</div>
 			</div>

@@ -1,8 +1,12 @@
 ## 개인 개발 프로젝트
 
-first Commit Web Master PHP
-
 간단한 php 게시판
+
+개발 언어 : php , js , jquery
+
+개발 db : mssql pdo 사용으로 크게 변경안해도 다른 db 사용가능
+
+server : Apache
 
 version 1 으로써 추가 수정사항 있음
 
