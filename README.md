@@ -8,7 +8,7 @@
 
 server : Apache
 
-version 1 으로써 추가 수정사항 있음
+version 1
 
 - 회원 가입시 가입자 확인 프론트 단에서 확인
 
