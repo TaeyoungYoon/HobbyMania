@@ -1,0 +1,179 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+#board {
+  margin-top: 20px;
+}
+
+@media(min-width: 768px) {
+  .col-sm-6 {
+    width: 50%;
+  }
+}
+
+#sub_header{
+  margin-top:15px;
+  font-size: 18px;
+}
+.nav-item
+{
+  margin-right: 15px;
+}
+
+#board_data {
+  background-color: #eeeeee;
+}
+#board_table {
+  height:67px;
+  
+}
+
+.vf_ellipsis { overflow:hidden; text-overflow:ellipsis; -o-text-overflow:ellipsis; -ms-text-overflow:ellipsis; white-space:nowrap; position:relative; float:left; }
+
+#vf_360 { width:auto; max-width:360px; }
+
+#board_name{
+  font-size:12px;
+}
+
+#selectedPage {
+  color: black;
+  font-weight: bold;
+}
+
+.filebox label {
+  display: inline-block;
+  padding: .5em .75em;
+  color: #fff;
+  font-size: inherit;
+  line-height: normal;
+  vertical-align: middle;
+  background-color: #5cb85c;
+  cursor: pointer;
+  border: 1px solid #4cae4c;
+  border-radius: .25em;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.filebox label:hover {
+  background-color: #6ed36e;
+}
+
+.filebox label:active {
+  background-color: #367c36;
+}
+
+.filebox input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.imgs_wrap {
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+.imgs_wrap img {
+  max-width: 150px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+.imgs_before {
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+.imgs_before img {
+  max-width: 150px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.reply {
+  border-bottom : 1px solid;
+  margin-bottom: 30px;
+}
+.reply .card-header{
+  font-size: 20px;
+  font-weight: bold;
+  margin: 30px 30px 15px 0px;
+}
+.reply .list-group-item .form-inline{
+  font-size: 17px;
+  font-weight: bold;
+  margin: 5px 30px 10px 0px;
+}
+
+#commentInsert-submit{
+  margin: 10px 30px 10px 0px;
+}
+
+#commentName{ 
+  font-size: 15px;
+  font-weight: bold;
+  color:blue
+}
+#commentTime{ 
+  font-size: 13px;
+  color:black
+}
+
+#commenttext
+{
+  margin: 10px 0px 10px 0px;
+}
+
+#commentUpdate
+{
+  font-size: 13px;
+  margin: 0px 5px 0px 0px;
+}
+#commentreply{
+  font-size: 13px;
+  margin: 0px 5px 0px 0px;
+}
+#commentDelete
+{
+  font-size: 13px;
+  margin: 0px 5px 0px 0px;
+}
+
+.comment{
+  width: 400px;
+  background-color:#ffffff;
+  border:2px solid #cccccc
+}
+
+.commentup{
+  width: 400px;
+  background-color:#ffffff;
+  border:2px solid #cccccc
+}
+.cmtbox .name{
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 10px 10px 10px;
+}
+
+.cmtbox .txt{
+  width:400px;
+  height:60px;
+  margin: 10px 10px 20px 10px;
+}

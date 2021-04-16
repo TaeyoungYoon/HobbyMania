@@ -8,6 +8,7 @@
 
 server : Apache
 
+
 git mac에서 사용 하도록 업데이트 중!!!
 
 version 1
@@ -21,3 +22,4 @@ version 1
 version 2
 
 - search 기능 (전체 검색, 각 게시판 마다 검색 가능 업데이트)
+
