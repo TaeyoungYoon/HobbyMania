@@ -18,6 +18,7 @@
 			{
 				$this->db = new PDO(DSN, DB_USER, DB_PASS) ;
 				$this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION) ;
+				$this->db->setAttribute(PDO::SQLSRV_ATTR_FETCHES_NUMERIC_TYPE, true); 
 			}
 			catch(PDOException $ex)
 			{
