@@ -27,7 +27,7 @@
                     </form>
                 </div>
 END;
-    $subcss = '<link rel="stylesheet" href="css/jumbotron.css">';
+    $subcss = '<link rel="stylesheet" href="css/jumbotron.css?t=200420">';
     }
 
     if( isset($_SESSION['mem_id']) || isset($_SESSION['name']) )

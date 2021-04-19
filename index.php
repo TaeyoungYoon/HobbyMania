@@ -11,96 +11,96 @@
             </div>
         </div>
     
-        <div class="container">
+        <div class="container" id="mainrank">
             <div class="row">
-                <div class="col-md-4" id="mainRank">
+                <div class="col-md-4">
                     <h3>농구MANIA</h3>
                     <ul>
                         <li>
                             <div class="text">
-                                <a href="www.naver.com"><span>test</span></a>
+                                <a href="www.naver.com"><span class="cntnumber">1</span><span class="title">test</span></a>
                             </div>
                         </li>
                         <li>
                             <div class="text">
-                                <a href="#">test</a>
+                                <a href="www.naver.com"><span class="cntnumber">1</span><span class="title">test</span></a>
                             </div>
                         </li>
                         <li>
                             <div class="text">
-                                <a href="#">test</a>
+                                <a href="www.naver.com"><span class="cntnumber">1</span><span class="title">test</span></a>
                             </div>
                         </li>
                         <li>
                             <div class="text">
-                                <a href="www.naver.com"><span>test</span></a>
+                                <a href="www.naver.com"><span class="cntnumber">1</span><span class="title">test</span></a>
                             </div>
                         </li>
                         <li>
                             <div class="text">
-                                <a href="www.naver.com"><span>test</span></a>
+                                <a href="www.naver.com"><span class="cntnumber">1</span><span class="title">test</span></a>
                             </div>
                         </li>
                     </ul>
                     <p><a class="btn btn-default" href="/board/boardPage.php?cate=b_001&page=1" role="button">입장하기 &raquo;</a></p>
                 </div>
-                <div class="col-md-4" id="mainRank">
+                <div class="col-md-4">
                     <h3>배구MANIA</h3>
                     <ul>
                         <li>
                             <div class="text">
-                                <a href="www.naver.com"><span>test</span></a>
+                                <a href="www.naver.com"><span class="cntnumber">1</span><span class="title">test</span></a>
                             </div>
                         </li>
                         <li>
                             <div class="text">
-                                <a href="#">test</a>
+                                <a href="www.naver.com"><span class="cntnumber">1</span><span class="title">test</span></a>
                             </div>
                         </li>
                         <li>
                             <div class="text">
-                                <a href="#">test</a>
+                                <a href="www.naver.com"><span class="cntnumber">1</span><span class="title">test</span></a>
                             </div>
                         </li>
                         <li>
                             <div class="text">
-                                <a href="www.naver.com"><span>test</span></a>
+                                <a href="www.naver.com"><span class="cntnumber">1</span><span class="title">test</span></a>
                             </div>
                         </li>
                         <li>
                             <div class="text">
-                                <a href="www.naver.com"><span>test</span></a>
+                                <a href="www.naver.com"><span class="cntnumber">1</span><span class="title">test</span></a>
                             </div>
                         </li>
                     </ul>
                     <p><a class="btn btn-default" href="/board/boardPage.php?cate=b_002&page=1" role="button">입장하기 &raquo;</a></p>
                 </div>
-                <div class="col-md-4" id="mainRank">
+                <div class="col-md-4">
                     <h3>축구MANIA</h3>
                     <ul>
                         <li>
                             <div class="text">
-                                <a href="www.naver.com"><span>test</span></a>
+                                <a href="www.naver.com"><span class="cntnumber">1</span><span class="title">test</span></a>
                             </div>
                         </li>
                         <li>
                             <div class="text">
-                                <a href="#">test</a>
+                                <a href="www.naver.com"><span class="cntnumber">1</span><span class="title">test</span></a>
                             </div>
                         </li>
                         <li>
                             <div class="text">
-                                <a href="#">test</a>
+                                <a href="www.naver.com"><span class="cntnumber">1</span><span class="title">test</span></a>
                             </div>
                         </li>
                         <li>
                             <div class="text">
-                                <a href="www.naver.com"><span>test</span></a>
+                                <a href="www.naver.com"><span class="cntnumber">1</span><span class="title">test</span></a>
                             </div>
                         </li>
                         <li>
                             <div class="text">
-                                <a href="www.naver.com"><span>test</span></a>
+                                <a href="www.naver.com"><span class="cntnumber">1</span><span class="title">test</span></a>
                             </div>
                         </li>
                     </ul>

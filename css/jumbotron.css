@@ -2,6 +2,20 @@
 body {
   padding-top: 50px;
   padding-bottom: 20px;
+  font-size:20px;
+}
+#mainrank{
+  font-size:20px;
+}
+
+#mainrank li{
+  list-style:none;
+  padding-left:0px;
+}
+
+#mainrank ul{
+  list-style:none;
+  padding-left:0px;
 }
 #board {
   margin-top: 20px;
@@ -21,7 +35,6 @@ body {
 }
 #board_table {
   height:67px;
-  
 }
 
 .vf_ellipsis { overflow:hidden; text-overflow:ellipsis; -o-text-overflow:ellipsis; -ms-text-overflow:ellipsis; white-space:nowrap; position:relative; float:left; }
