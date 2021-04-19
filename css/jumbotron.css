@@ -7,12 +7,6 @@ body {
   margin-top: 20px;
 }
 
-@media(min-width: 768px) {
-  .col-sm-6 {
-    width: 50%;
-  }
-}
-
 #sub_header{
   margin-top:15px;
   font-size: 18px;

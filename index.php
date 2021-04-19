@@ -12,21 +12,98 @@
         </div>
     
         <div class="container">
-            <!-- Example row of columns -->
             <div class="row">
-                <div class="col-md-12">
-                    <h2>농구MANIA</h2>
-                    <p>마이클 조던 부터 르브론제임스 동네농구까지 우리 모두 농구 이야기로 대화 해보세요! 농구 좋아하는사람 여기여기 붙어라~</p>
+                <div class="col-md-4" id="mainRank">
+                    <h3>농구MANIA</h3>
+                    <ul>
+                        <li>
+                            <div class="text">
+                                <a href="www.naver.com"><span>test</span></a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="text">
+                                <a href="#">test</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="text">
+                                <a href="#">test</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="text">
+                                <a href="www.naver.com"><span>test</span></a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="text">
+                                <a href="www.naver.com"><span>test</span></a>
+                            </div>
+                        </li>
+                    </ul>
                     <p><a class="btn btn-default" href="/board/boardPage.php?cate=b_001&page=1" role="button">입장하기 &raquo;</a></p>
                 </div>
-                <div class="col-md-12">
-                    <h2>배구MANIA</h2>
-                    <p>여자 배구이야기는 식상하다 남자배구 이야기하자 배구 이야기로 대화 해보세요! 배구 좋아하는사람 여기여기 붙어라~</p>
+                <div class="col-md-4" id="mainRank">
+                    <h3>배구MANIA</h3>
+                    <ul>
+                        <li>
+                            <div class="text">
+                                <a href="www.naver.com"><span>test</span></a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="text">
+                                <a href="#">test</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="text">
+                                <a href="#">test</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="text">
+                                <a href="www.naver.com"><span>test</span></a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="text">
+                                <a href="www.naver.com"><span>test</span></a>
+                            </div>
+                        </li>
+                    </ul>
                     <p><a class="btn btn-default" href="/board/boardPage.php?cate=b_002&page=1" role="button">입장하기 &raquo;</a></p>
                 </div>
-                <div class="col-md-12">
-                    <h2>축구MANIA</h2>
-                    <p>축구는 분데스리가 ,EPL 이지 !! 해외축구 보러가자 ~ 축구 이야기로 대화 해보세요! 축구 좋아하는사람 여기여기 붙어라~</p>
+                <div class="col-md-4" id="mainRank">
+                    <h3>축구MANIA</h3>
+                    <ul>
+                        <li>
+                            <div class="text">
+                                <a href="www.naver.com"><span>test</span></a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="text">
+                                <a href="#">test</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="text">
+                                <a href="#">test</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="text">
+                                <a href="www.naver.com"><span>test</span></a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="text">
+                                <a href="www.naver.com"><span>test</span></a>
+                            </div>
+                        </li>
+                    </ul>
                     <p><a class="btn btn-default" href="/board/boardPage.php?cate=b_003&page=1" role="button">입장하기 &raquo;</a></p>
                 </div>
             </div>
