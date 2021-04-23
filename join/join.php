@@ -26,15 +26,13 @@
             {
                 if (!isset($_SESSION)) // 로그인시 세션 설정
                 {
-                    session_start();
-                    $InitalizationKey = Google2FA::generate_secret_key(16);					// Set the inital key
-    
+                    session_start();				// Set the inital key
+                    $_SESSION['initial'] = $user['otpkey'] ;
+
                     $TimeStamp	  = Google2FA::get_timestamp();
-                    $secretkey 	  = Google2FA::base32_decode($InitalizationKey);	// Decode it into binary
+                    $secretkey 	  = Google2FA::base32_decode($_SESSION['initial']);	// Decode it into binary
                     $otp       	  = Google2FA::oath_hotp($secretkey, $TimeStamp);	// Get current token
-    
                 }
-                $_SESSION['initial'] = $InitalizationKey ;
 
                 if( $_POST['checkok'] == true) // 회원 정보 변경 인증 회원에게 세션 부여
                 {
@@ -58,29 +56,32 @@
         if($_POST['otp'] && $_POST['otp'] != '' )
         {
             $otpPass = $_POST['otp'] ;
-            $initialkey = $_POST['initialkey'] ;
+            $initial = $_POST['initial'] ;
             $mem_id = $_POST['mem_id'] ;
-            $password = $_POST['password'] ;
 
             $c = new db_member() ;
+            
+            // $TimeStamp	  = Google2FA::get_timestamp();
+            // $secretkey 	  = Google2FA::base32_decode($initial);	// Decode it into binary
+            // $otp       	  = Google2FA::oath_hotp($secretkey, $TimeStamp);	// Get current token
+            $result = Google2FA::verify_key($initial, $otpPass, 0, true);
 
-            $result = Google2FA::verify_key($initialkey, $otpPass);
-
-            if( $result == true )
-            {
-                echo json_encode(array('result' => '1')); // 로그인 설정
-
-                $user = $c -> selectUser( $mem_id, $password ) ;
-
-                $_SESSION['mem_id'] = $user['mem_id'];
-                $_SESSION['name'] = $user['name'];
-                $_SESSION['level'] = $user['level'];
-                $_SESSION['email'] = $user['email'];
-            }
-            else
-            {
-                echo json_encode(array('result' => '-1'));// 로그인 실패 (OTP 값 불 일치)
-            }
+                if( $result == true )
+                {
+                    echo json_encode(array('result' => '1')); // 로그인 설정
+    
+                    $user = $c -> otpUser( $mem_id ) ;
+    
+                    session_start();
+                    $_SESSION['mem_id'] = $user['mem_id'];
+                    $_SESSION['name'] = $user['name'];
+                    $_SESSION['level'] = $user['level'];
+                    $_SESSION['email'] = $user['email'];
+                }
+                else
+                {
+                    echo json_encode(array('result' => '-1'));// 로그인 실패 (OTP 값 불 일치)
+                }
         }
         else
         {

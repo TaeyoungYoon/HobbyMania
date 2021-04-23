@@ -7,6 +7,7 @@ CREATE TABLE hb_member(
     ip_address VARCHAR(20) , 
     date_created datetime ,
     hash_key VARCHAR(20) NOT NULL,
+    otp_key VARCHAR(500) NOT NULL,
     level VARCHAR(10) FOREIGN KEY REFERENCES hb_level (level) NOT NULL DEFAULT 'l_001'
 )
 

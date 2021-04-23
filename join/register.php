@@ -1,6 +1,7 @@
 <?php
     /*-- 회원 가입 backend --*/
     require_once ('../db/db_info.php') ;
+    require_once ('../lib/auth.php') ;
     $mem_id = preg_replace('#[^a-zA-Z0-9]#', '', $_POST['mem_id']);
     $name = preg_replace('#[^가-힣ㄱ-ㅎㅏ-ㅣa-zA-Z0-9]#', '', $_POST['name']);
     $password =  $_POST['password'];
@@ -21,8 +22,11 @@
         } 
         else 
         {
+            //$otpkey = $mem_id.Google2FA::generate_secret_key(16);//오류
+    
+            $otpkey = Google2FA::generate_secret_key(16);
             // 회원 등록
-            $user = $c->insertUser($mem_id, $name, $password, $email);
+            $user = $c->insertUser($mem_id, $name, $password, $email ,$otpkey );
             if ($user) 
             {
                 if (!isset($_SESSION)) 

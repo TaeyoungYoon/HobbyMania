@@ -6,7 +6,7 @@
     class db_member extends db_connection
     {
         // 회원 insert
-        public function insertUser($mem_id, $name, $password, $email ) 
+        public function insertUser($mem_id, $name, $password, $email ,$otpkey) 
         {
 
             $hash = hashPassword($password) ;
@@ -16,8 +16,8 @@
             try
             {
                 $this->db->beginTransaction();
-                $query = "INSERT INTO dbo.hb_member(mem_id, name, password, email, ip_address, date_created, hash_key) " ;
-                $query .= "VALUES(:mem_id, :name, :password, :email, :ip, getdate(), :hash_key)" ;
+                $query = "INSERT INTO dbo.hb_member(mem_id, name, password, email, ip_address, date_created, hash_key, otpkey) " ;
+                $query .= "VALUES(:mem_id, :name, :password, :email, :ip, getdate(), :hash_key, :otpkey)" ;
                 $stmt = $this->db->prepare($query) ; 
                 $stmt->bindValue(':mem_id',$mem_id,PDO::PARAM_STR) ;
                 $stmt->bindValue(':name',$name,PDO::PARAM_STR) ;
@@ -25,6 +25,7 @@
                 $stmt->bindValue(':email',$email,PDO::PARAM_STR) ;
                 $stmt->bindValue(':ip',$ip,PDO::PARAM_STR) ;
                 $stmt->bindValue(':hash_key',$key,PDO::PARAM_STR) ;
+                $stmt->bindValue(':otpkey',$otpkey,PDO::PARAM_STR) ;
                 $result = $stmt->execute() ;
                 $this->db->commit() ;
             } 
@@ -135,6 +136,23 @@
                 {
                     return $user;
                 }
+            }
+            else 
+            {
+                return NULL;
+            }
+        }
+
+        public function otpUser($mem_id)
+        {
+            $sql = "SELECT * FROM dbo.hb_member WHERE mem_id=:mem_id";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindValue(':mem_id', $mem_id, PDO::PARAM_STR);
+            $stmt->execute();
+
+            if($user = $stmt->fetch())
+            {
+                return $user;
             }
             else 
             {

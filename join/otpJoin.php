@@ -28,7 +28,7 @@ echo <<<END
             <div class="container">
         
                 <div class="otp">
-                    <img src="https://www.google.com/chart?chs=200x200&cht=qr&chl=otpauth://totp/hobbymania?secret={$_SESSION['initial']}">
+                    <img src="https://image-charts.com/chart?chs=200x200&chld=M|0&cht=qr&chl=otpauth://totp/hobbymania?secret={$_SESSION['initial']}">
                 </div>
 
                 <div class="otpok">
@@ -44,20 +44,19 @@ echo <<<END
                             type: 'POST',
                             data: {
                                 otp:$('#otp').val(),
-                                initialkey:'{$_SESSION['initial']}'.
-                                mem_id:'{$mem_id}',
-                                password:'{$password}'
+                                initial:'{$_SESSION['initial']}',
+                                mem_id:'{$mem_id}'
                             },
                             dataType: "json",
                             success: function (response) {
                                 if(response.result == 1){
-                                    location.replace('../index.php');
+                                    location.href= '../index.php';
                                 } else if(response.result == -1){
-                                    alert('아이디,비밀번호를 다시 확인 해주세요');
+                                    alert('OTP 인증실패 ');
                                 } else if(response.result == -2){
                                     alert('입력된 값이 없습니다');
                                 } else {
-                                    alert('등록중에 에러가 발생했습니다');
+                                    alert('OTP 인증실패');
                                 }
                             },
                             error:function(request,status,error){

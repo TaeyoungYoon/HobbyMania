@@ -85,6 +85,25 @@ END;
         {$subcss}
     </head>
     <script>
+    function post(path, parameters) {
+        var form = $('<form></form>');
+    
+        form.attr("method", "post");
+        form.attr("action", path);
+    
+        $.each(parameters, function(key, value) {
+            var field = $('<input></input>');
+    
+            field.attr("type", "hidden");
+            field.attr("name", key);
+            field.attr("value", value);
+    
+            form.append(field);
+        });
+    
+        $(document.body).append(form);
+        form.submit();
+    }
     $(function(){
         $('#login-submit').click(function(e){
             e.preventDefault();
@@ -120,22 +139,10 @@ END;
                 dataType: "json",
                 success: function (response) {
                     if(response.result == 1){
-                        $.ajax({
-                            url: '../join/otpJoin.php',
-                            type: 'POST',
-                            data: {
-                                mem_id:$('#inputID').val(),
-                                password:$('#inputPassword').val(),
-                            },
-                            dataType: "json",
-                            success: function (response) {
-                                alert('OTP 이중 인증을 거치겠습니다.');
-                            },
-                            error:function(request,status,error){
-                                alert("code = "+ request.status + " message = " + request.responseText + " error = " + error);
-                            }
-                        }); 
-                        location.href='../join/otpJoin.php';
+                        alert('OTP 이중 인증을 거치겠습니다.');
+                        var mem_id = $('#inputID').val() ;
+                        var password = $('#inputPassword').val();
+                        post('../join/otpJoin.php',{'mem_id':mem_id, 'password':password}) ;
                     } else if(response.result == -1){
                         alert('아이디,비밀번호를 다시 확인 해주세요');
                     } else if(response.result == -2){
