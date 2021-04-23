@@ -111,7 +111,7 @@ END;
                 return false;
             }
             $.ajax({
-                url: '../join/join.php',
+                url: '../join/join.php?m=join',
                 type: 'POST',
                 data: {
                     mem_id:$('#inputID').val(),
@@ -120,8 +120,22 @@ END;
                 dataType: "json",
                 success: function (response) {
                     if(response.result == 1){
-                        alert('환영합니다.');
-                        location.reload(true);
+                        $.ajax({
+                            url: '../join/otpJoin.php',
+                            type: 'POST',
+                            data: {
+                                mem_id:$('#inputID').val(),
+                                password:$('#inputPassword').val(),
+                            },
+                            dataType: "json",
+                            success: function (response) {
+                                alert('OTP 이중 인증을 거치겠습니다.');
+                            },
+                            error:function(request,status,error){
+                                alert("code = "+ request.status + " message = " + request.responseText + " error = " + error);
+                            }
+                        }); 
+                        location.href='../join/otpJoin.php';
                     } else if(response.result == -1){
                         alert('아이디,비밀번호를 다시 확인 해주세요');
                     } else if(response.result == -2){
