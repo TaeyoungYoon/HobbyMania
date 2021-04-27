@@ -29,9 +29,9 @@
                     session_start();				// Set the inital key
                     $_SESSION['initial'] = $user['otpkey'] ;
 
-                    $TimeStamp	  = Google2FA::get_timestamp();
-                    $secretkey 	  = Google2FA::base32_decode($_SESSION['initial']);	// Decode it into binary
-                    $otp       	  = Google2FA::oath_hotp($secretkey, $TimeStamp);	// Get current token
+                    // $TimeStamp	  = Google2FA::get_timestamp();
+                    // $secretkey 	  = Google2FA::base32_decode($_SESSION['initial']);	// Decode it into binary
+                    // $otp       	  = Google2FA::oath_hotp($secretkey, $TimeStamp);	// Get current token
                 }
 
                 if( $_POST['checkok'] == true) // 회원 정보 변경 인증 회원에게 세션 부여

@@ -160,8 +160,10 @@ class Google2FA {
 	    ) % pow(10, self::otpLength);
 	}
 }
-// $InitalizationKey = "PEHMPSDNLXIOG65U";					// Set the inital key
 // echo $micro = microtime(true);
+
+// $InitalizationKey = "PEHMPSDNLXIOG65U";					// Set the inital key
+
 // $TimeStamp	  = Google2FA::get_timestamp();
 // $secretkey 	  = Google2FA::base32_decode($InitalizationKey);	// Decode it into binary
 // $otp       	  = Google2FA::oath_hotp($secretkey, $TimeStamp);	// Get current token
